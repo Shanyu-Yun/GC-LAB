@@ -6,8 +6,8 @@ project(OpenGLTest)
 set(CMAKE_CXX_STANDARD 17)
 set(VCPKG_ROOT C:/enviroment/vcpkg/)
 
-set(CMAKE_TOOLCHAIN_FILE C:/enviroment/vcpkg/scripts/buildsystems/vcpkg.cmake)
-set(CMAKE_PREFIX_PATH C:/enviroment/vcpkg/installed/x64-windows/share)
+set(CMAKE_TOOLCHAIN_FILE ${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_PREFIX_PATH ${VCPKG_ROOT}/installed/x64-mingw-static/share)
 
 # Finding required packages
 find_package(glad CONFIG REQUIRED)
@@ -24,7 +24,7 @@ target_include_directories(utils PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src/utils)
 
 # Levels and subprojects
 set(LEVELS basic) # ... add more levels as needed
-set(BASIC_SUBPROJECTS 1.0hello_window 1.1draw_triangle 1.2factory 1.3draw_rectangle 1.4shader 1.5texture 1.6camera 1.7ambientLight 1.8diffuseLight  )
+set(BASIC_SUBPROJECTS 1.1hello_window 1.2draw_triangle 1.3factory 1.4draw_rectangle 1.5shader 1.6texture 1.7camera 1.8ambientLight 1.9diffuseLight  )
 
 foreach(level IN LISTS LEVELS)
     message(STATUS "Level: ${level}")
