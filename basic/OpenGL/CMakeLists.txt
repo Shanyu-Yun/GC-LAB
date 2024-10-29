@@ -24,8 +24,8 @@ target_include_directories(utils PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src/utils)
 
 # Levels and subprojects
 set(LEVELS basic medium) # ... add more levels as needed
-set(BASIC_SUBPROJECTS 1.0hello_window 1.1draw_triangle 1.2factory 1.3draw_rectangle 1.4shader 1.5texture 1.6camera 1.7ambientLight 1.8diffuseLight)
-set(MEDIUM_SUBPROJECTS  2.3objLoader 2.4lightWithModel 2.5gimbalLockCamera  2.6quaternionCamera )
+set(BASIC_SUBPROJECTS 1.1hello_window 1.2draw_triangle 1.3factory 1.4draw_rectangle 1.5shader 1.6texture 1.7camera 1.8ambientLight 1.9diffuseLight)
+
 
 foreach(level IN LISTS LEVELS)
     message(STATUS "Level: ${level}")
