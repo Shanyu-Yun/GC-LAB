@@ -15,7 +15,7 @@
 
 先将项目文件下载到本地
 ```bash
-git clone https://github.com/Shanyu-Yun/GC-LAB
+git clone https://github.com/BOT-CG/CG-LAB
 ```
 
 切换到vcpkg.exe所在目录
@@ -30,7 +30,7 @@ cd path/to/vcpkg
 ./vcpkg install glad:x64-mingw-static
 ./vcpkg install stb:x64-mingw-static
 ./vcpkg install yaml-cpp:x64-mingw-static
-```
+``` 
 
 将CMakeLists.txt文件中vcpkg的配置路径修改为自己的路径
 ```txt
