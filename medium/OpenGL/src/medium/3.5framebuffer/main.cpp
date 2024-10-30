@@ -1,5 +1,5 @@
 #define STB_IMAGE_IMPLEMENTATION
-#include <GL/glew.h>
+#include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
 
@@ -88,6 +88,7 @@ GLuint createProgram(const char *vertexSource, const char *fragmentSource)
 
 int main()
 {
+
     if (!glfwInit())
     {
         std::cerr << "Failed to initialize GLFW" << std::endl;
@@ -100,7 +101,6 @@ int main()
 #ifdef __APPLE__
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
-
     GLFWwindow *window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Blurred Triangle", nullptr, nullptr);
     if (!window)
     {
@@ -108,14 +108,10 @@ int main()
         glfwTerminate();
         return -1;
     }
-
     glfwMakeContextCurrent(window);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
-    glewExperimental = GL_TRUE;
-    if (glewInit() != GLEW_OK)
-    {
-        std::cerr << "Failed to initialize GLEW" << std::endl;
+    if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)){
+        std::cout << "Failed to initialize GLAD" << std::endl;
         return -1;
     }
 
