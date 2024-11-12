@@ -99,6 +99,7 @@ int main()
         workpieceShader.setMat4("Projection", projection);
         workpieceShader.setMat4("View", myCamera.GetViewMatrix());
         workpieceShader.setMat4("Model", ModelMatrix);
+        workpiecelineShader.setVec3("Colors",glm::vec3(0.6,0.6,0.6));
         //绘制workpiece
         glBindVertexArray(workpieceVAO);
         glDrawElements(GL_TRIANGLES, workpiece.zmapIndices.size(), GL_UNSIGNED_INT, 0);
