@@ -1,1 +1,1 @@
-This is the graphics experiment code
+This is a computer graphics lab at South China University of Technology.

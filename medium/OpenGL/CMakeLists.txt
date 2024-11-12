@@ -15,12 +15,11 @@ find_package(glfw3 CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(assimp CONFIG REQUIRED)
 find_package(yaml-cpp CONFIG REQUIRED)
-find_package(GLEW REQUIRED)
 
 # Shared utility library
 file(GLOB SHARED_UTILS_SRC "src/utils/*.cpp" "src/utils/*.h")
 add_library(utils ${SHARED_UTILS_SRC})
-target_link_libraries(utils PRIVATE glad::glad glfw glm::glm assimp::assimp GLEW::GLEW )
+target_link_libraries(utils PRIVATE glad::glad glfw glm::glm assimp::assimp )
 target_include_directories(utils PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src/utils)
 
 # Levels and subprojects
