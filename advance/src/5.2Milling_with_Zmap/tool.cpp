@@ -122,7 +122,7 @@ void initWorkpieceData(WorkPiece &workpiece)
     {
         for (int z = 0; z < workpiece.width; z++)
         {
-            workpiece.setDepth(x, z, cos(x * workpiece.precision) * workpiece.precision * 2 + sin(z * workpiece.precision) * workpiece.precision * 2 + 0.25);
+            workpiece.setDepth(x, z, 0.0);
         }
     }
 }

@@ -44,11 +44,9 @@ int main()
     glHint(GL_LINE_SMOOTH_HINT, GL_NICEST);
     glEnable(GL_POLYGON_SMOOTH);
     glHint(GL_POLYGON_SMOOTH_HINT, GL_NICEST);
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_CULL_FACE);
     glCullFace(GL_BACK);
-    glLineWidth(4.0f);
+    glLineWidth(2.0f);
     // 初始化工件，并用一个二元函数初始化其数值
     // 长度、宽度与精度
     WorkPiece workpiece(200, 200, 0.2);
