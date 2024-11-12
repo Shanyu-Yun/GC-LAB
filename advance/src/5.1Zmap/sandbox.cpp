@@ -17,6 +17,10 @@ int main()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+#ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+#endif
     GLFWwindow *window = glfwCreateWindow(width, height, "Z-Map", nullptr, nullptr);
 
     if (window == nullptr)
@@ -99,7 +103,7 @@ int main()
         glBindVertexArray(workpieceVAO);
         glDrawElements(GL_TRIANGLES, workpiece.zmapIndices.size(), GL_UNSIGNED_INT, 0);
         
-        /*
+        
         //绘制workplace网格
         workpiecelineShader.use();
         workpiecelineShader.setMat4("Projection", projection);
@@ -108,7 +112,7 @@ int main()
         workpiecelineShader.setVec3("Colors",glm::vec3(0.4,0.4,0.4));
         glBindVertexArray(lineVAO);
         glDrawElements(GL_LINES, workpiece.lineIndices.size(), GL_UNSIGNED_INT, 0);
-        */
+        
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
