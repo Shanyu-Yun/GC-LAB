@@ -3,7 +3,10 @@ project(Z-Map)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_TOOLCHAIN_FILE "C/enviroment/vcpkg/scripts/buildsystems/vcpkg.cmake")
+set(VCPKG_ROOT C:/enviroment/vcpkg/)
+
+set(CMAKE_TOOLCHAIN_FILE C:/enviroment/vcpkg/scripts/buildsystems/vcpkg.cmake)
+set(CMAKE_PREFIX_PATH C:/enviroment/vcpkg/installed/x64-windows/share)
 
 find_package(glfw3 REQUIRED)
 find_package(glad REQUIRED)
